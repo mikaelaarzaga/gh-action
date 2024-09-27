@@ -25,6 +25,9 @@ jobs:
         run: |
           curl -sSL https://terraform-docs.io/install.sh | sh
 
+      - name: Check terraform-docs version
+        run: terraform-docs --version
+
       - name: Generate README
         run: |
           terraform-docs markdown table ./my-terraform-module --output-file README.md
@@ -37,4 +40,4 @@ jobs:
           git commit -m 'Update README.md'
           git push
         env:
-          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
