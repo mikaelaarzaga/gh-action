@@ -26,9 +26,8 @@ jobs:
 
       - name: Install terraform-docs
         run: |
-          set -e
-          curl -sSL https://raw.githubusercontent.com/terraform-docs/terraform-docs/main/install.sh | sh
-
+          curl -sSL https://terraform-docs.io/install.sh | sh
+          
       - name: Check terraform-docs version
         run: terraform-docs --version
 
