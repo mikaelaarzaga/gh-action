@@ -31,6 +31,14 @@ jobs:
       - name: Check terraform-docs version
         run: terraform-docs --version
 
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install JSON tool
+        run: npm install -g json
+
       - name: Generate README
         run: |
           terraform-docs markdown table ./my-terraform-module --output-file README.md
